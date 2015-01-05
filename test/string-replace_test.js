@@ -36,6 +36,28 @@ exports['string-replace'] = {
 
     test.done();
   },
+  'normalize_replacements_fn': function(test) {
+    test.expect(2);
+
+    var replacementFn = function() {
+      var replacements = [], i = 0;
+
+      for (; i < 10; i++) {
+        replacements.push(new Replacement());
+      }
+      return replacements;
+    };
+
+    var normalized = string_replace.normalize_replacements(replacementFn);
+    test.equal(Array.isArray(normalized), true, 'normalized should be an array');
+
+    var total = normalized.reduce(function(subtotal, item) {
+      return subtotal + item.length;
+    }, 0);
+    test.equal(total, 20, 'normalized should have n * 2 items');
+
+    test.done();
+  },
 
   'multi_str_replace': function(test) {
     test.expect(1);
