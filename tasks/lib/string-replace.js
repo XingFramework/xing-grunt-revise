@@ -76,6 +76,9 @@ exports.init = function(grunt) {
   };
 
   exports.normalize_replacements = function(replacements) {
+    if (typeof replacements === 'function') {
+      replacements = replacements();
+    }
     return replacements.map(function(replacement) {
       return [replacement.pattern, replacement.replacement];
     });
