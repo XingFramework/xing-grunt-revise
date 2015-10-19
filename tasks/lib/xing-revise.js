@@ -1,6 +1,6 @@
 /*
- * grunt-string-replace
- * https://github.com/erickrdch/grunt-string-replace
+ * xing-grunt-revise
+ * https://github.com/erickrdch/xing-grunt-revise
  *
  * Copyright (c) 2014 Erick Ruiz de Chavez
  * Licensed under the MIT license.
@@ -76,9 +76,6 @@ exports.init = function(grunt) {
   };
 
   exports.normalize_replacements = function(replacements) {
-    if (typeof replacements === 'function') {
-      replacements = replacements();
-    }
     return replacements.map(function(replacement) {
       return [replacement.pattern, replacement.replacement];
     });

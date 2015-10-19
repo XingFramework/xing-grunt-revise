@@ -1,28 +1,27 @@
 {
-  "name": "grunt-string-replace",
-  "description": "Replaces strings on files by using string or regex patterns. Attempts to be a String.prototype.replace adapter task for your grunt project.",
-  "version": "1.0.0",
-  "homepage": "https://github.com/erickrdch/grunt-string-replace",
+  "name": "xing-grunt-revise",
+  "description": "Replaces strings on files by using string or regex patterns loaded from a file",
+  "version": "0.0.1",
+  "homepage": "https://github.com/XingFramework/xing-grunt-revise",
   "author": {
-    "name": "Erick Ruiz de Chavez",
-    "email": "erick@erch.co",
-    "url": "http://erickruizdechavez.com"
+    "name": "Logical Reality Design, Inc",
+    "email": "xing@lrdesign.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/erickrdch/grunt-string-replace.git"
+    "url": "git@github.com:XingFramework/xing-grunt-revise.git"
   },
   "bugs": {
-    "url": "https://github.com/erickrdch/grunt-string-replace/issues"
+    "url": "https://github.com/XingFramework/xing-grunt-revise/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/erickrdch/grunt-string-replace/blob/master/LICENSE-MIT"
+      "url": "https://github.com/XingFramework/xing-grunt-revise/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "tasks/string-replace",
-  "bin": "bin/grunt-string-replace",
+  "main": "tasks/xing-revise",
+  "bin": "bin/xing-grunt-revise",
   "engines": {
     "node": ">= 0.8.0",
     "npm": ">= 1.4.15"

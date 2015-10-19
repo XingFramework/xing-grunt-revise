@@ -1,6 +1,6 @@
 /*
- * grunt-string-replace
- * https://github.com/erickrdch/grunt-string-replace
+ * xing-grunt-revise
+ * https://github.com/erickrdch/xing-grunt-revise
  *
  * Copyright (c) 2014 Erick Ruiz de Chavez
  * Licensed under the MIT license.
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
       }
     },
 
-    'string-replace': {
+    'xing-revise': {
       single_file: {
         files: {
           'tmp/foo.txt': 'test/fixtures/foo.txt'
@@ -139,6 +139,6 @@ module.exports = function(grunt) {
   // Load local tasks.
   grunt.loadTasks('tasks');
 
-  grunt.registerTask('test', ['clean', 'copy', 'string-replace', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'copy', 'xing-revise', 'nodeunit']);
   grunt.registerTask('default', ['jshint', 'test']);
 };

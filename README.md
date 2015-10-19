@@ -1,6 +1,6 @@
-# grunt-string-replace [![Build Status](https://travis-ci.org/erickrdch/grunt-string-replace.svg)](https://travis-ci.org/erickrdch/grunt-string-replace)  [![Node Dependencies](https://david-dm.org/erickrdch/grunt-string-replace.svg)](https://david-dm.org/erickrdch/grunt-string-replace)
+# xing-grunt-revise
 
-Replaces strings on files by using string or regex patterns. Attempts to be a [String.prototype.replace](http://www.ecma-international.org/ecma-262/5.1/#sec-15.5.4.11) adapter task for your grunt project.
+Replaces strings on files by using string or regex patterns from a file
 
 ## Getting Started
 This plugin requires node `>= 0.8.0`, Grunt `>= 0.4.0` and npm `>= 1.4.15` (latest stable is recommended).
@@ -8,20 +8,20 @@ This plugin requires node `>= 0.8.0`, Grunt `>= 0.4.0` and npm `>= 1.4.15` (late
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-string-replace --save-dev
+npm install xing-grunt-revise --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```javascript
-grunt.loadNpmTasks('grunt-string-replace');
+grunt.loadNpmTasks('xing-grunt-revise');
 ```
 
-*If you're still using grunt v0.3.x it's strongly recommended that [you upgrade](http://gruntjs.com/upgrading-from-0.3-to-0.4), but in case you can't please use [v0.1.1-1](https://github.com/erickrdch/grunt-string-replace/tree/0.1.1-1).*
+*If you're still using grunt v0.3.x it's strongly recommended that [you upgrade](http://gruntjs.com/upgrading-from-0.3-to-0.4), but in case you can't please use [v0.1.1-1](https://github.com/erickrdch/xing-grunt-revise/tree/0.1.1-1).*
 
 ## Configuration
 
-Inside your `Gruntfile.js` file add a section named `string-replace`. This section specifies the files to edit, destinations, patterns and replacements.
+Inside your `Gruntfile.js` file add a section named `xing-revise`. This section specifies the files to edit, destinations, patterns and replacements.
 
 ### Parameters
 
@@ -63,7 +63,7 @@ options: {
 ### Multiple files and multiple replacements
 
 ```javascript
-'string-replace': {
+'xing-revise': {
   dist: {
     files: {
       'dest/': 'src/**',
@@ -84,7 +84,7 @@ options: {
 ### Simple inline content
 
 ```javascript
-'string-replace': {
+'xing-revise': {
   inline: {
     files: {
       'dest/': 'src/**',
@@ -107,7 +107,7 @@ options: {
 For more details, see Grunt's documentation about [dynamic files object](http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically).
 
 ```javascript
-'string-replace': {
+'xing-revise': {
   dist: {
     files: [{
       expand: true,
@@ -127,7 +127,7 @@ For more details, see Grunt's documentation about [dynamic files object](http://
 
 ### Advanced inline
 
-Since grunt-string-replace is basically a wrapper of [String.prototype.replace](http://www.ecma-international.org/ecma-262/5.1/#sec-15.5.4.11) you can also provide a function as a replacement pattern instead of a string or a template. To get more details about how to use a function as replacement pattern I recommend you to read [Specifying a function as a parameter](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_function_as_a_parameter).
+Since xing-grunt-revise is basically a wrapper of [String.prototype.replace](http://www.ecma-international.org/ecma-262/5.1/#sec-15.5.4.11) you can also provide a function as a replacement pattern instead of a string or a template. To get more details about how to use a function as replacement pattern I recommend you to read [Specifying a function as a parameter](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_function_as_a_parameter).
 
 We will be reading file names from HTML comments and use the paths later to fetch the content and insert it inside a resulting HTML. Assuming the following setup:
 
@@ -163,7 +163,7 @@ module.exports = function (grunt) {
       src: 'src/*.html'
       dist: 'dist/'
     },
-    'string-replace': {
+    'xing-revise': {
       dist: {
         files: {
           '<%= config.dist %>': '<%= config.src %>'
@@ -181,10 +181,10 @@ module.exports = function (grunt) {
   });
 
   // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-string-replace');
+  grunt.loadNpmTasks('xing-grunt-revise');
 
   // Default task.
-  grunt.registerTask('default', ['string-replace']);
+  grunt.registerTask('default', ['xing-revise']);
 };
 ```
 
@@ -246,7 +246,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
   - Updated dependencies for Grunt 0.4.0.
 
 0.2.0
-  - Added Support for grunt 0.4.0. This version will not support grunt 0.3.x, if you need to use it then ```npm install grunt-string-replace@0.1```.
+  - Added Support for grunt 0.4.0. This version will not support grunt 0.3.x, if you need to use it then ```npm install xing-grunt-revise@0.1```.
 
 0.1.1-1
   - Added Clean task (and dev dependency) to remove test generated file before testing.

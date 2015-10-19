@@ -1,13 +1,13 @@
 /*
- * grunt-string-replace
- * https://github.com/erickrdch/grunt-string-replace
+ * xing-grunt-revise
+ * https://github.com/erickrdch/xing-grunt-revise
  *
  * Copyright (c) 2012 Erick Ruiz de Chavez
  * Licensed under the MIT license.
  */
 
 var grunt = require('grunt'),
-  string_replace = require('../tasks/lib/string-replace').init(grunt);
+  revise = require('../tasks/lib/xing-revise').init(grunt);
 
 var Replacement = function(pattern, replacement) {
     return {
@@ -16,7 +16,7 @@ var Replacement = function(pattern, replacement) {
     };
   };
 
-exports['string-replace'] = {
+exports['xing-revise'] = {
   'normalize_replacements': function(test) {
     test.expect(2);
 
@@ -26,7 +26,7 @@ exports['string-replace'] = {
       replacements.push(new Replacement());
     }
 
-    var normalized = string_replace.normalize_replacements(replacements);
+    var normalized = revise.normalize_replacements(replacements);
     test.equal(Array.isArray(normalized), true, 'normalized should be an array');
 
     var total = normalized.reduce(function(subtotal, item) {
@@ -48,7 +48,7 @@ exports['string-replace'] = {
       return replacements;
     };
 
-    var normalized = string_replace.normalize_replacements(replacementFn);
+    var normalized = revise.normalize_replacements(replacementFn);
     test.equal(Array.isArray(normalized), true, 'normalized should be an array');
 
     var total = normalized.reduce(function(subtotal, item) {
@@ -61,7 +61,7 @@ exports['string-replace'] = {
 
   'multi_str_replace': function(test) {
     test.expect(1);
-    test.equal(string_replace.multi_str_replace('ASDF QWER', [
+    test.equal(revise.multi_str_replace('ASDF QWER', [
       ['ASDF', 'Hello'],
       [/qwer/i, 'World']
     ]), 'Hello World', 'should replace a set of replacements');
