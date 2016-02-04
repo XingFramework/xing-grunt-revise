@@ -1,7 +1,7 @@
 {
   "name": "xing-grunt-revise",
   "description": "Replaces strings on files by using string or regex patterns loaded from a file",
-  "version": "0.0.1",
+  "version": "1.0.0-beta",
   "homepage": "https://github.com/XingFramework/xing-grunt-revise",
   "author": {
     "name": "Logical Reality Design, Inc",
